@@ -1,0 +1,197 @@
+<!-- 
+				FarmApp
+Integrantes:
+	- Nahuen Doffo
+	- Pablo Kogan
+	- Matias Levy
+	- Matias Urrutia
+	- Julián Salas
+	- Lucas Colantuono
+
+Copyright (C) <year> <copyright holders>
+
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
+ to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, 
+ sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following 
+ conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF 
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE 
+FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION 
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.ico">
+
+    <title>farMap - Hackathon Neuqu&eacute;n 2014</title>
+    
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+<script src="bootstrap/js/jquery-1.11.0.min.js"> </script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script	src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script type="text/javascript"> 
+ var geocoder;
+
+ if (navigator.geolocation) {
+   navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+} 
+//Get the latitude and the longitude;
+function successFunction(position) {
+   var lat = position.coords.latitude;
+   var lng = position.coords.longitude;
+   codeLatLng(lat, lng);
+}
+
+function errorFunction(){
+   alert("Geocoder failed");
+}
+
+ function initialize() {
+   geocoder = new google.maps.Geocoder();
+
+
+
+ }
+
+ function codeLatLng(lat, lng) {
+
+   var latlng = new google.maps.LatLng(lat, lng);
+   geocoder.geocode({'latLng': latlng}, function(results, status) {
+     if (status == google.maps.GeocoderStatus.OK) {
+     //console.log(results);
+       if (results[1]) {
+       var indice=0;
+       for (var j=0; j<results.length; j++)
+       {
+           if (results[j].types[0]=='locality')
+               {
+                   indice=j;
+                   break;
+               }
+           }
+       //alert('The good number is: '+j);
+       console.log(results[j]);
+       for (var i=0; i<results[j].address_components.length; i++)
+           {
+               if (results[j].address_components[i].types[0] == "locality") {
+                       //this is the object you are looking for
+                       city = results[j].address_components[i];
+                   }
+               if (results[j].address_components[i].types[0] == "administrative_area_level_1") {
+                       //this is the object you are looking for
+                       region = results[j].address_components[i];
+                   }
+               if (results[j].address_components[i].types[0] == "country") {
+                       //this is the object you are looking for
+                       country = results[j].address_components[i];
+                   }
+           }
+
+           //city data
+           //alert(city.long_name + " || " + region.long_name + " || " + country.short_name)
+if (city.long_name == "Neuquen")	
+alert("si");
+
+           } else {
+             alert("No results found");
+           }
+       //}
+     } else {
+       alert("Geocoder failed due to: " + status);
+     }
+   });
+ }
+</script> 
+<link rel="icon" 
+      type="image/ico" 
+      href="img/favicon.ico">
+      
+
+
+<script type="text/javascript" src="functions.js"></script>
+
+     <!--Bootstrap core CSS -->
+    
+     <!--Custom styles for this template -->
+    
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Navegaci&oacute;n</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.php" style="margin-top: -10px;"><img width="40px" src="logo.png"></a>
+          
+        </div>
+        
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="index.php">Home</a></li>
+            <li><a href="qr.php">De Turno</a></li>
+            <li><a href="#about">Nosotros</a></li>
+            <li><a href="#contact">Contacto</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Farmacias</a></li>
+                <li><a href="#">Hospitales</a></li>
+                <li><a href="#">Emergencias</a></li>
+                <!-- <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li> -->
+              </ul>
+            </li>
+          </ul>
+		
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    
+<div id="neuquen" class="container" align="center" style="padding-top:150px; text-align:center;">
+
+
+    <a href = "tel:+542994423222"><button type="button" class="btn btn-primary btn-lg btn-block">Policia</button></a><br/>
+    <a href = "tel:+542994422212"><button type="button" class="btn btn-danger btn-lg btn-block">Bomberos</button></a><br/>
+    <a href = "tel:+542994491200"><button type="button" class="btn btn-warning btn-lg btn-block">Defensa Civil</button></a>
+</div>
+
+    <!-- FOOTER 
+    
+    <div id="wrap" class="container" style="padding-top: 25px; text-align: center; background-color: black; color: white;">
+    <img src="" width="50px">
+    Hackathon Neuqu&eacute;n - 2014
+    </div>
+    
+    END FOOTER -->
+
+  
+</html>

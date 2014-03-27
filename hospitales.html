@@ -1,0 +1,117 @@
+<!-- 
+				FarmApp
+Integrantes:
+	- Nahuen Doffo
+	- Pablo Kogan
+	- Matias Levy
+	- Matias Urrutia
+	- Julián Salas
+	- Lucas Colantuono
+
+Copyright (C) <year> <copyright holders>
+
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
+ to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, 
+ sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following 
+ conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF 
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE 
+FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION 
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.ico">
+
+    <title>farMap - Hackathon Neuqu&eacute;n 2014</title>
+    
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+<script src="bootstrap/js/jquery-1.11.0.min.js"> </script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script	src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script type="text/javascript" src="functions.js"></script>
+<link rel="icon" 
+      type="image/ico" 
+      href="img/favicon.ico">
+
+     <!--Bootstrap core CSS -->
+    
+     <!--Custom styles for this template -->
+    
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Navegaci&oacute;n</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.php" style="margin-top: -10px;"><img width="40px" src="logo.png"></a>
+          
+        </div>
+        
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.php">Home</a></li>
+            <li><a href="qr.php" target="_blank">De Turno</a></li>
+            <li><a href="staff.html">Staff</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Farmacias</a></li>
+                <li class="active"><a href="hospitales.html">Hospitales</a></li>
+                <li><a href="#">Emergencias</a></li>
+                <!-- <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li> -->
+              </ul>
+            </li>
+          </ul>
+		
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+<div id="container" style="margin-top: 40px">
+<iframe style="width: 100%; height: 500px; margin: auto;" 
+src=https://www.google.com/fusiontables/embedviz?q=select+col3+from+1RcPK8gD6_HW5PpKdyoPw9TPZjHoAw6MN0wEFl2OV&viz=MAP&h=false&lat=-38.8007241883542&lng=-68.80030859375&t=1&z=7&l=col3&y=2&tmplt=3&hml=TWO_COL_LAT_LNG"></iframe>
+</div>
+
+    <!-- FOOTER 
+    
+    <div id="wrap" class="container" style="padding-top: 25px; text-align: center; background-color: black; color: white;">
+    <img src="" width="50px">
+    Hackathon Neuqu&eacute;n - 2014
+    </div>
+    
+    END FOOTER -->
+      </body>
+</html>

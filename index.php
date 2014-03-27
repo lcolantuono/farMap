@@ -1,4 +1,30 @@
+<!-- 
+				FarmApp
+Integrantes:
+	- Nahuen Doffo
+	- Pablo Kogan
+	- Matias Levy
+	- Matias Urrutia
+	- Julián Salas
+	- Lucas Colantuono
 
+Copyright (C) <year> <copyright holders>
+
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
+ to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, 
+ sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following 
+ conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF 
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE 
+FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION 
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+ -->
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -16,7 +42,7 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 
 <script	src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-
+<script type="text/javascript" src="functions.js"></script>
 <link rel="icon" 
       type="image/ico" 
       href="img/favicon.ico">
@@ -47,8 +73,6 @@ function ajax(page1) {
 	});
 }
 </script>
-
-<script type="text/javascript" src="functions.js"></script>
 
      <!--Bootstrap core CSS -->
     
@@ -83,14 +107,14 @@ function ajax(page1) {
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="index.php">Home</a></li>
             <li><a href="qr.php" target="_blank">De Turno</a></li>
-            <li><a href="#about">Nosotros</a></li>
-            <li><a href="#contact">Contacto</a></li>
+            <li><a href="staff.html">Staff</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Farmacias</a></li>
-                <li><a href="#">Hospitales</a></li>
-                <li><a href="#">Emergencias</a></li>
+                <li><a href="hospitales.html">Hospitales</a></li>
+                <li><a href="emergencias.html">Emergencias</a></li>
                 <!-- <li class="divider"></li>
                 <li class="dropdown-header">Nav header</li>
                 <li><a href="#">Separated link</a></li>
@@ -130,11 +154,11 @@ function ajax(page1) {
           <h2>Farmacias</h2>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="img/hospi.png" alt="Generic placeholder image" width="150px">
+          <a href="hospitales.html"><img class="img-circle" src="img/hospi.png" alt="Generic placeholder image" width="150px"></a>
           <h2>Hospitales</h2>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="img/emerg.png" alt="Generic placeholder image" width="150px">
+          <a href="emergencias.html"><img class="img-circle" src="img/emerg.png" alt="Generic placeholder image" width="150px"></a>
           <h2>Emergencias</h2>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
